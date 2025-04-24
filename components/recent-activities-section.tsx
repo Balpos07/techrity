@@ -22,21 +22,21 @@ export default function RecentActivitiesSection() {
             title="KYC Verification"
             description="45 new persons just signed up on Mentiy"
             time="25 minutes Ago"
-            icon="🔍"
+            icon=""
           />
 
           <ActivityItem
             title="New User Sign Up!"
             description="45 new persons just signed up on Mentiy"
             time="25 minutes Ago"
-            icon="👤"
+            icon=""
           />
 
           <ActivityItem
             title="Withdrawal Request"
             description="Maxwell requested a withdrawal"
             time="25 minutes Ago"
-            icon="💰"
+            icon=""
           />
         </div>
       </div>

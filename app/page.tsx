@@ -43,7 +43,7 @@ export default function Dashboard() {
           </div>
         </header>
 
-        <div className="flex items-center justify-between p-4">
+        <div className="flex items-center justify-end p-4">
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="h-8 border-gray-200 hidden md:flex">
               <svg

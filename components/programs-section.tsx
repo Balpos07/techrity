@@ -4,6 +4,7 @@ import { useState } from "react"
 import { MoreVertical, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from "next/image"
 
 export default function ProgramsSection() {
   const [activeTab, setActiveTab] = useState("All")
@@ -38,7 +39,7 @@ export default function ProgramsSection() {
             description="This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical curriculum..."
             tag="Ongoing"
             tagColor="green"
-            image="/placeholder.svg?height=120&width=320"
+           image="/images/meetings/four.png"
             mentor="Faith Iheke"
           />
 
@@ -47,7 +48,7 @@ export default function ProgramsSection() {
             description="This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical curriculum..."
             tag="Ongoing"
             tagColor="green"
-            image="/placeholder.svg?height=120&width=320"
+          image="/images/meetings/one.png"
             mentor="Faith Iheke"
           />
 
@@ -56,7 +57,7 @@ export default function ProgramsSection() {
             description="This program is a hands-on guide designed for designers who want to master color theory and confidently apply it to their designs. This practical curriculum..."
             tag="Ongoing"
             tagColor="green"
-            image="/placeholder.svg?height=120&width=320"
+            image="/images/meetings/one.png"
             mentor="Syd"
           />
         </div>
@@ -68,8 +69,15 @@ export default function ProgramsSection() {
 function ProgramCard({ title, description, tag, tagColor, image, mentor }) {
   return (
     <div className="rounded-md overflow-hidden border border-gray-200">
-      <div className="relative">
-        <img src={image || "/placeholder.svg"} alt={title} className="w-full h-32 object-cover" />
+      <div className="relative h-32">
+      <Image
+          src={image || "/placeholder.svg"}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority
+        />
         <div
           className={`absolute top-2 left-2 text-xs px-2 py-1 rounded-full ${
             tagColor === "green" ? "bg-green-500 text-white" : "bg-gray-500 text-white"

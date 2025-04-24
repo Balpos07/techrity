@@ -2,6 +2,7 @@
 import { MoreVertical, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import Image from 'next/image'
 
 export default function GroupCallsSection() {
   return (
@@ -28,6 +29,7 @@ export default function GroupCallsSection() {
             statusColor="green"
             attendees={3}
             group="UI/UX/Prod. Study group"
+            image="/images/meetings/one.png"
           />
 
           <CallCard
@@ -38,6 +40,7 @@ export default function GroupCallsSection() {
             statusColor="blue"
             attendees={3}
             group="UI/UX/Prod. Study group"
+            image="/images/meetings/two.png"
           />
 
           <CallCard
@@ -48,6 +51,7 @@ export default function GroupCallsSection() {
             statusColor="green"
             attendees={3}
             group="UI/UX/Prod. Study group"
+            image="/images/meetings/three.png"
           />
         </div>
       </div>
@@ -55,11 +59,18 @@ export default function GroupCallsSection() {
   )
 }
 
-function CallCard({ title, date, time, status, statusColor, attendees, group }) {
+function CallCard({ title, date, time, status, statusColor, attendees, group, image }) {
   return (
     <div className="rounded-md border border-gray-200 overflow-hidden">
-      <div className="relative">
-        <img src="/placeholder.svg?height=80&width=200" alt={title} className="w-full h-20 object-cover" />
+      <div className="relative h-20">
+      <Image 
+          src={image}
+          alt={title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority
+        />
         <div
           className={`absolute top-2 left-2 text-xs px-2 py-1 rounded-full flex items-center gap-1 ${
             statusColor === "green" ? "bg-green-500 text-white" : "bg-blue-500 text-white"
